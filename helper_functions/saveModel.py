@@ -9,9 +9,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def saveModel(model, train_datasets, epochs, optimizer, arch):
-    
-    print("Saving the model...")
-
     model.class_to_idx = train_datasets.class_to_idx
 
     if arch.lower() == "vgg19":
@@ -29,4 +26,4 @@ def saveModel(model, train_datasets, epochs, optimizer, arch):
 
 
     torch.save(checkpoint, 'checkpoint.pth')
-    print("Done saving the model")
+    print("Model is saved")

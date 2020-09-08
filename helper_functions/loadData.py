@@ -29,14 +29,12 @@ def loadData(data_directory, batch_size):
                                                                 [0.229, 0.224, 0.225])])
 
 
-    # Load the datasets with ImageFolder
     train_datasets = datasets.ImageFolder(train_dir, transform = train_transforms)
     valid_datasets = datasets.ImageFolder(valid_dir, transform = valid_transforms)
     test_datasets = datasets.ImageFolder(test_dir, transform = test_transforms)
 
-    # Using the image datasets and the trainforms, define the dataloaders
-    train_dataloaders = torch.utils.data.DataLoader(train_datasets, batch_size=batch_size, shuffle=True)
-    valid_dataloaders = torch.utils.data.DataLoader(valid_datasets, batch_size=batch_size, shuffle=True)
-    test_dataloaders = torch.utils.data.DataLoader(test_datasets, batch_size=batch_size)
+    train_loaders = torch.utils.data.DataLoader(train_datasets, batch_size=batch_size, shuffle=True)
+    valid_loaders = torch.utils.data.DataLoader(valid_datasets, batch_size=batch_size, shuffle=True)
+    test_loaders = torch.utils.data.DataLoader(test_datasets, batch_size=batch_size)
 
-    return train_dataloaders, valid_dataloaders, test_dataloaders, train_datasets
+    return train_loaders, valid_loaders, test_loaders, train_datasets

@@ -24,5 +24,4 @@ def loadModel(checkpoint_file):
     for param in model.parameters():
         param.requires_grad = False
 
-    print("Done loading the model")
     return model    

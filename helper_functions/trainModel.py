@@ -22,7 +22,7 @@ def trainModel(model, trainLoaders, validLoaders, criterion, optimizer, epochs, 
     validation_accuracies = []
     steps = 0
 
-    for e in range(epochs):
+    for epoch in range(epochs):
         model.train()
         training_loss = 0
         
@@ -60,7 +60,7 @@ def trainModel(model, trainLoaders, validLoaders, criterion, optimizer, epochs, 
                         training_valid_loss.append(validation_loss/len(validLoaders))
                         validation_accuracies.append(validation_accuracy/len(validLoaders) * 100)
 
-                        print("Epoch: {}\n".format(e),
+                        print("Epoch: {}\n".format(epoch),
                                 "Training Loss: {:.4f}\n".format(training_loss/len(trainLoaders)),
                                 "Validation Loss: {:.4f}\n".format(validation_loss/len(validLoaders)),
                                 "Validation Accuracy: {:.4f}\n".format(validation_accuracy/len(validLoaders) * 100))
@@ -69,6 +69,4 @@ def trainModel(model, trainLoaders, validLoaders, criterion, optimizer, epochs, 
     # Get the total time that has elapsed
     elapsed_time = time.time() - start_time  
     print("Total Time: {}\n".format(elapsed_time))
-
-    print("\nDone training the model \n")
 

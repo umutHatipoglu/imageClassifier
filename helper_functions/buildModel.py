@@ -33,6 +33,4 @@ def buildModel(arch, hidden_units):
                 ('output', nn.LogSoftmax(dim=1))]))
 
     model.classifier = classifier
-
-    print("Done creating the model\n")
     return model
